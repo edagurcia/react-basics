@@ -1,0 +1,41 @@
+.container {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+}
+
+.form,
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.field input[type="text"],
+.field select {
+  padding: 1rem;
+  background-color: transparent;
+  border: 0.3rem solid var(--white);
+  color: var(--white);
+  font-size: 1.8rem;
+  font-weight: 400;
+  border-radius: 1rem;
+}
+
+.submit {
+  background-color: var(--primary);
+  border: none;
+  color: var(--white);
+  font-weight: 700;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  border-radius: 1rem;
+  padding: 1.2rem;
+}

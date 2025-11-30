@@ -1,0 +1,38 @@
+.container {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  padding: 30px;
+  width: 100%;
+  max-width: 400px;
+  margin: 40px auto;
+  color: #000;
+  text-align: center;
+}
+
+.title {
+  font-size: 2rem;
+  text-transform: uppercase;
+}
+
+.current {
+  font-size: 5rem;
+  font-weight: 900;
+}
+
+.temps {
+  display: flex;
+  justify-content: center;
+  gap: 5rem;
+}
+
+.temps p {
+  font-weight: 900;
+}
+
+.temps span {
+  font-weight: 400;
+}
