@@ -33,6 +33,7 @@ const ProjectSchema: Schema = new Schema(
     tasks: [
       {
         type: Types.ObjectId,
+        ref: "Task",
       },
     ],
   },

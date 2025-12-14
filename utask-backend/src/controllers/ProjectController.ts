@@ -18,11 +18,28 @@ export class ProjectController {
       const projects = await Project.find({});
       res.status(200).json(projects);
     } catch (error) {
-      console.log(error);
+      res.status(500).json({ error: "Hubo un error" });
     }
   };
 
   static getProjectById = async (req: Request, res: Response) => {
+    const { id } = req.params;
+
+    try {
+      const project = await Project.findById(id).populate("tasks");
+
+      if (!project) {
+        const error = new Error("Proyecto no encontrado");
+        return res.status(404).json({ error: error.message });
+      }
+
+      res.status(200).json(project);
+    } catch (error) {
+      res.status(500).json({ error: "Hubo un error" });
+    }
+  };
+
+  static updateProject = async (req: Request, res: Response) => {
     const { id } = req.params;
 
     try {
@@ -33,28 +50,15 @@ export class ProjectController {
         return res.status(404).json({ error: error.message });
       }
 
-      res.status(200).json(project);
-    } catch (error) {
-      console.log(error);
-    }
-  };
-
-  static updateProject = async (req: Request, res: Response) => {
-    const { id } = req.params;
-
-    try {
-      const project = await Project.findByIdAndUpdate(id, req.body);
-
-      if (!project) {
-        const error = new Error("Proyecto no encontrado");
-        return res.status(404).json({ error: error.message });
-      }
+      project.projectName = req.body.projectName;
+      project.clientName = req.body.clientName;
+      project.description = req.body.description;
 
       await project.save();
 
       res.send("Proyecto actualizado correctamente");
     } catch (error) {
-      console.log(error);
+      res.status(500).json({ error: "Hubo un error" });
     }
   };
 
@@ -72,7 +76,7 @@ export class ProjectController {
       await project.deleteOne();
       res.send("Proyecto eliminado correctamente");
     } catch (error) {
-      console.log(error);
+      res.status(500).json({ error: "Hubo un error" });
     }
   };
 }
