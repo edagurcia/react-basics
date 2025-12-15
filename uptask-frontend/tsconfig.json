@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2020", "DOM", "WebWorker"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    /* Configuración clave del alias */
+    "baseUrl": "./src", // Indica la carpeta base para la resolución de módulos
+    "paths": {
+      "@/*": ["*"] // Mapea @/algo a src/algo
+    },
+
+    /* Opciones de Bundler */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
