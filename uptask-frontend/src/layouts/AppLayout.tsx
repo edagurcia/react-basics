@@ -1,5 +1,8 @@
 import { Outlet } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import NavMenu from "@/components/NavMenu";
 import { Logo } from "@/components/Logo";
+import "react-toastify/dist/ReactToastify.css";
 
 export const AppLayout = () => {
   return (
@@ -10,7 +13,7 @@ export const AppLayout = () => {
             <Logo />
           </div>
 
-          <nav></nav>
+          <NavMenu />
         </div>
       </header>
 
@@ -23,6 +26,12 @@ export const AppLayout = () => {
           Todos los derechos reservados {new Date().getFullYear()}
         </p>
       </footer>
+
+      <ToastContainer
+        position="top-right"
+        pauseOnHover={false}
+        pauseOnFocusLoss={false}
+      />
     </>
   );
 };

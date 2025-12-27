@@ -5,6 +5,7 @@
     "lib": ["ES2020", "DOM", "WebWorker"],
     "module": "ESNext",
     "skipLibCheck": true,
+    "types": ["vite/client"],
 
     /* Configuración clave del alias */
     "baseUrl": "./src", // Indica la carpeta base para la resolución de módulos
